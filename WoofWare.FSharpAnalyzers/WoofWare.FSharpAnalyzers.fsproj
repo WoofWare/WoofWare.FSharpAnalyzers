@@ -13,7 +13,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright (c) Patrick Stevens 2025</Copyright>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Smaug123/WoofWare.FSharpAnalyzers</RepositoryUrl>
+    <RepositoryUrl>https://github.com/WoofWare/WoofWare.FSharpAnalyzers</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>fsharp;analyzers;fsharp-analyzer</PackageTags>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
