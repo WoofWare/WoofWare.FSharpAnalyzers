@@ -46,7 +46,7 @@ module BlockingCallsAnalyzer =
             | ParsedInput.ImplFile parsedImplFileInput -> parsedImplFileInput.Trivia.CodeComments
             | _ -> []
 
-        let violations = ResizeArray<range * string * string> ()
+        let violations = ResizeArray<range * string * string>()
 
         let walker =
             { new TypedTreeCollectorBase() with

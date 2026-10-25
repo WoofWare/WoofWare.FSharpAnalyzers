@@ -8,7 +8,7 @@ open System.Threading.Tasks
 let createTcs (x : bool option) =
     match x with
     | Some value when value ->
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if value then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else

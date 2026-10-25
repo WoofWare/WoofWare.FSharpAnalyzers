@@ -104,10 +104,10 @@ module ReturnBangOnlyAnalyzer =
         foundReturnFrom && not foundOtherOp
 
     let analyze (checkFileResults : FSharpCheckFileResults) =
-        let violations = ResizeArray<range> ()
+        let violations = ResizeArray<range>()
 
         // First, collect all Delay calls that would be violations
-        let delayCallsToCheck = ResizeArray<range> ()
+        let delayCallsToCheck = ResizeArray<range>()
 
         let collectDelays =
             { new TypedTreeCollectorBase() with
@@ -124,7 +124,7 @@ module ReturnBangOnlyAnalyzer =
 
             // Now check each Delay call to see if it's inside a control flow operation
             // by walking the tree again and looking for control flow that contains these Delays
-            let controlFlowRanges = ResizeArray<range> ()
+            let controlFlowRanges = ResizeArray<range>()
 
             let collectControlFlow =
                 { new TypedTreeCollectorBase() with

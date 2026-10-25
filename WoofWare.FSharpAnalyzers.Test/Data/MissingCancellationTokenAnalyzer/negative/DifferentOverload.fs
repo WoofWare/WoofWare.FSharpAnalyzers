@@ -25,7 +25,7 @@ type Service () =
 let consume (service : Service) =
     task {
         let! _ = service.FetchAsync [| 1 ; 2 |]
-        do! service.ProcessAsync (List<int> ())
+        do! service.ProcessAsync (List<int>())
         let! _ = service.LoadAsync ()
         return ()
     }

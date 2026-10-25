@@ -20,7 +20,7 @@ let testValueTaskAwaiterGetResult () =
     awaiter.GetResult ()
 
 let testValueTaskAwaiterGetResultGeneric () =
-    let vt = ValueTask<string> ("hello")
+    let vt = ValueTask<string>("hello")
     let awaiter = vt.GetAwaiter ()
     let result = awaiter.GetResult ()
     result

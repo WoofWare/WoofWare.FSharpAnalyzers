@@ -44,8 +44,8 @@ module SuppressThrowingGenericAnalyzer =
             false
 
     let analyze (_ : ISourceText) (typedTree : FSharpImplementationFileContents) =
-        let violations = ResizeArray<range> ()
-        let bindingsWithSuppress = HashSet<FSharpMemberOrFunctionOrValue> ()
+        let violations = ResizeArray<range>()
+        let bindingsWithSuppress = HashSet<FSharpMemberOrFunctionOrValue>()
 
         let walker =
             { new TypedTreeCollectorBase() with

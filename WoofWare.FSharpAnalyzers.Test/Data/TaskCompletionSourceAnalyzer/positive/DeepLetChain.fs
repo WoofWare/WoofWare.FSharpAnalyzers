@@ -49,7 +49,7 @@ let createTcs (p : bool) =
     let b40 = b39 && b39
 
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if b40 then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else

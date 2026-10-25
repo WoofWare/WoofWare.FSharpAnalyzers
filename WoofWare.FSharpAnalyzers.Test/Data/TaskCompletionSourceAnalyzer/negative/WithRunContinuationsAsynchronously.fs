@@ -4,14 +4,14 @@ open System.Threading.Tasks
 
 let createTcsCorrect () =
     let tcs =
-        TaskCompletionSource<int> (TaskCreationOptions.RunContinuationsAsynchronously)
+        TaskCompletionSource<int>(TaskCreationOptions.RunContinuationsAsynchronously)
 
     tcs.SetResult 42
     tcs.Task
 
 let createTcsWithStateAndOptions () =
     let tcs =
-        TaskCompletionSource<string> ("state", TaskCreationOptions.RunContinuationsAsynchronously)
+        TaskCompletionSource<string>("state", TaskCreationOptions.RunContinuationsAsynchronously)
 
     tcs.SetResult "hello"
     tcs.Task

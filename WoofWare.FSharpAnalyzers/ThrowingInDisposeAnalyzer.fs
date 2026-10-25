@@ -175,7 +175,7 @@ module ThrowingInDisposeAnalyzer =
             |> Seq.iter (fun subExpr -> findObjectExpressions subExpr violations)
 
     let analyze (typedTree : FSharpImplementationFileContents) =
-        let violations = ResizeArray<range * string> ()
+        let violations = ResizeArray<range * string>()
 
         // Walk all declarations
         let rec walkDeclarations (decls : FSharpImplementationFileDeclaration list) =

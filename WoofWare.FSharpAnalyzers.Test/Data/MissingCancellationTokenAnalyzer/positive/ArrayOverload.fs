@@ -18,6 +18,6 @@ type ArrayService () =
 let consumeArrays (service : ArrayService) =
     task {
         let! _ = service.FetchAsync [| 1 ; 2 |]
-        do! service.ProcessAsync (List<int> ())
+        do! service.ProcessAsync (List<int>())
         return ()
     }

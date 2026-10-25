@@ -2,7 +2,7 @@ module TripleAwait
 
 open System.Threading.Tasks
 
-let getValueTask () : ValueTask<string> = ValueTask<string> ("hello")
+let getValueTask () : ValueTask<string> = ValueTask<string>("hello")
 
 let problematic () =
     task {

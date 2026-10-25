@@ -99,7 +99,7 @@ module StreamReadAnalyzer =
         | FSharpImplementationFileDeclaration.InitAction expr -> findIgnoredReads expr acc
 
     let analyze (checkFileResults : FSharpCheckFileResults) =
-        let violations = ResizeArray<range * string> ()
+        let violations = ResizeArray<range * string>()
 
         match checkFileResults.ImplementationFile with
         | Some implFile -> implFile.Declarations |> List.iter (walkDeclaration violations)

@@ -125,7 +125,7 @@ module Tests =
         |> Array.map TestCaseData
 
     let makeClient (analyzerName : string) =
-        let client = Client<CliAnalyzerAttribute, _> ()
+        let client = Client<CliAnalyzerAttribute, _>()
 
         let stats =
             client.LoadAnalyzers (
@@ -147,7 +147,7 @@ module Tests =
                 let edi = ExceptionDispatchInfo.Capture e
                 edi.Throw ()
                 failwith "unreachable"
-            | Ok message -> message
+            | Ok message -> message |> List.map _.Message
         )
 
     [<TestCaseSource(nameof tests)>]
@@ -165,7 +165,7 @@ module Tests =
                 )
 
             let ctx = file |> getContext options
-            let! result = client.RunAnalyzersSafely ctx
+            let! result = client.RunAnalyzers ctx
             let messagesFromCli = getMessages result
 
             match expected with
@@ -201,7 +201,7 @@ module Tests =
             let client = makeClient testCase.AnalyzerName
 
             let ctx = file |> getContext options
-            let! result = client.RunAnalyzersSafely ctx
+            let! result = client.RunAnalyzers ctx
             let messagesFromCli = getMessages result
 
             let fsProjFile = fsProjFile.Force ()

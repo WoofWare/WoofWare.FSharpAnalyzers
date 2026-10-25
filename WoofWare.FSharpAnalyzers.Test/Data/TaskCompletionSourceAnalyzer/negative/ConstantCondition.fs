@@ -4,7 +4,7 @@ open System.Threading.Tasks
 
 let createTcsConstTrueCondition () =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if true then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else
@@ -16,7 +16,7 @@ let createTcsConstTrueCondition () =
 
 let createTcsConstFalseCondition () =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if false then
                 TaskCreationOptions.None
             else

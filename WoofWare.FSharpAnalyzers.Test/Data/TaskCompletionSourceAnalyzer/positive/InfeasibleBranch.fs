@@ -4,7 +4,7 @@ open System.Threading.Tasks
 
 let createTcsContradictoryCondition (b : bool) =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if b && not b then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else

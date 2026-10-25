@@ -4,7 +4,7 @@ open System
 open System.Collections.Generic
 
 let testRegularMethods () =
-    let list = List<int> ()
+    let list = List<int>()
     list.Add (42)
     let count = list.Count
     let str = "hello"

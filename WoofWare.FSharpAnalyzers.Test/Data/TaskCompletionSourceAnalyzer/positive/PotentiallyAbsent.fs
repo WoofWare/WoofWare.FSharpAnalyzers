@@ -4,7 +4,7 @@ open System.Threading.Tasks
 
 let createTcsXorCancelsFlag (cond : bool) =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             (if cond then
                  TaskCreationOptions.RunContinuationsAsynchronously
              else
@@ -17,7 +17,7 @@ let createTcsXorCancelsFlag (cond : bool) =
 
 let createTcsBranchWithoutFlag (cond : bool) =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if cond then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else

@@ -38,6 +38,6 @@ let testBoolConfigureAwait () =
 let testCastToTask () =
     task {
         let t = Task.FromResult (42)
-        do! (t :> Task).ConfigureAwait (ConfigureAwaitOptions.SuppressThrowing)
+        do! (t :> Task).ConfigureAwait(ConfigureAwaitOptions.SuppressThrowing)
         return ()
     }

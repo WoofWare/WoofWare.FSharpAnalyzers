@@ -11,4 +11,4 @@ module ProjectOptions =
 
     // mkOptionsFromProject appears to be unsafe to run multiple times in parallel
     let get =
-        System.Lazy<_> ((fun () -> mkOptionsFromProject FRAMEWORK []), LazyThreadSafetyMode.ExecutionAndPublication)
+        System.Lazy<_>((fun () -> mkOptionsFromProject FRAMEWORK []), LazyThreadSafetyMode.ExecutionAndPublication)

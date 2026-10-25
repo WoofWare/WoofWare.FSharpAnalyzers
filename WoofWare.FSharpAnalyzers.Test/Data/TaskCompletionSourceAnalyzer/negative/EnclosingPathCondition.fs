@@ -8,13 +8,13 @@ open System.Threading.Tasks
 let createTcs (b : bool) =
     if b then
         let tcs =
-            TaskCompletionSource<int> (TaskCreationOptions.RunContinuationsAsynchronously)
+            TaskCompletionSource<int>(TaskCreationOptions.RunContinuationsAsynchronously)
 
         tcs.SetResult 1
         tcs.Task
     else
         let tcs =
-            TaskCompletionSource<int> (
+            TaskCompletionSource<int>(
                 if b then
                     TaskCreationOptions.None
                 else
