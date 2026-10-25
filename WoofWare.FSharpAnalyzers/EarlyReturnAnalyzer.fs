@@ -165,7 +165,7 @@ module EarlyReturnAnalyzer =
                 | _ -> ()
 
     let analyze (checkFileResults : FSharpCheckFileResults) =
-        let violations = HashSet<range> ()
+        let violations = HashSet<range>()
 
         match checkFileResults.ImplementationFile with
         | Some typedTree ->

@@ -9,7 +9,7 @@ open System.Threading.Tasks
 let createTcs (b : bool) (x : obj) =
     if b || not (Object.ReferenceEquals (x, x)) then
         let tcs =
-            TaskCompletionSource<int> (
+            TaskCompletionSource<int>(
                 if b then
                     TaskCreationOptions.RunContinuationsAsynchronously
                 else

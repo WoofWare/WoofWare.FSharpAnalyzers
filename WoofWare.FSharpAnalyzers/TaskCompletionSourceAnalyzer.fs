@@ -296,21 +296,21 @@ module TaskCompletionSourceAnalyzer =
     /// fresh opaque atom, as does any other guard whose value we cannot determine.
     type private AtomAllocator () =
         let byValue =
-            System.Collections.Generic.Dictionary<FSharpMemberOrFunctionOrValue, int> ()
+            System.Collections.Generic.Dictionary<FSharpMemberOrFunctionOrValue, int>()
 
         let valueFormulas =
-            System.Collections.Generic.Dictionary<FSharpMemberOrFunctionOrValue, BoolFormula> ()
+            System.Collections.Generic.Dictionary<FSharpMemberOrFunctionOrValue, BoolFormula>()
 
-        let freeAtoms = System.Collections.Generic.HashSet<int> ()
+        let freeAtoms = System.Collections.Generic.HashSet<int>()
 
         // The immutable values that back free atoms, and the values read inside opaque guards. If
         // these overlap, an opaque guard is a function of a free variable (e.g. `id b`); our model
         // treats the two as independent and would admit impossible combinations, so we bail to unknown.
         let freeVars =
-            System.Collections.Generic.HashSet<FSharpMemberOrFunctionOrValue> (HashIdentity.Structural)
+            System.Collections.Generic.HashSet<FSharpMemberOrFunctionOrValue>(HashIdentity.Structural)
 
         let opaqueVars =
-            System.Collections.Generic.HashSet<FSharpMemberOrFunctionOrValue> (HashIdentity.Structural)
+            System.Collections.Generic.HashSet<FSharpMemberOrFunctionOrValue>(HashIdentity.Structural)
 
         let mutable count = 0
 
@@ -558,7 +558,7 @@ module TaskCompletionSourceAnalyzer =
         | FSharpImplementationFileDeclaration.InitAction expr -> walkExpr violations [] [] [] expr
 
     let analyzeTypedTree (typedTree : FSharpImplementationFileContents) =
-        let violations = ResizeArray<range> ()
+        let violations = ResizeArray<range>()
 
         for decl in typedTree.Declarations do
             walkDeclaration violations decl

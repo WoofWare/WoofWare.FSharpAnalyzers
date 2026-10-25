@@ -19,7 +19,7 @@ module BoolFormula =
     /// The value of the formula under a valuation of its atoms.
     let eval (valuation : int -> bool) (f : BoolFormula) : bool =
         let cache =
-            System.Collections.Generic.Dictionary<BoolFormula, bool> (HashIdentity.Reference)
+            System.Collections.Generic.Dictionary<BoolFormula, bool>(HashIdentity.Reference)
 
         let rec go f =
             match cache.TryGetValue f with
@@ -41,7 +41,7 @@ module BoolFormula =
     /// The atoms the formula mentions.
     let atoms (f : BoolFormula) : Set<int> =
         let cache =
-            System.Collections.Generic.Dictionary<BoolFormula, Set<int>> (HashIdentity.Reference)
+            System.Collections.Generic.Dictionary<BoolFormula, Set<int>>(HashIdentity.Reference)
 
         let rec go f =
             match cache.TryGetValue f with

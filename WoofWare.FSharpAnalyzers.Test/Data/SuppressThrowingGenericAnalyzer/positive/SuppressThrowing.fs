@@ -24,7 +24,7 @@ let testMultipleOptions () =
 
 let testInlineCall () =
     task {
-        let! _ = Task.FromResult(3.14).ConfigureAwait (ConfigureAwaitOptions.SuppressThrowing)
+        let! _ = Task.FromResult(3.14).ConfigureAwait(ConfigureAwaitOptions.SuppressThrowing)
         return ()
     }
 

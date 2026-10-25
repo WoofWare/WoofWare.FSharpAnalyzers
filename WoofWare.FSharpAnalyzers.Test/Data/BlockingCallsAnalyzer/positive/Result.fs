@@ -16,6 +16,6 @@ let testChainedResult () =
     result
 
 let testValueTaskResult () =
-    let vt = ValueTask<int> (42)
+    let vt = ValueTask<int>(42)
     let result = vt.Result
     result

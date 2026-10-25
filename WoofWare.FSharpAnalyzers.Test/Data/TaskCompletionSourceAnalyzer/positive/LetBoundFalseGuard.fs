@@ -8,7 +8,7 @@ let createTcs () =
     let b = false
 
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if b then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else

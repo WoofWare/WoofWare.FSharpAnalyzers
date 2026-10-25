@@ -2,7 +2,7 @@ module LoopSafeAwait
 
 open System.Threading.Tasks
 
-let getValueTask () : ValueTask<int> = ValueTask<int> (42)
+let getValueTask () : ValueTask<int> = ValueTask<int>(42)
 
 // This is safe: ValueTask is created fresh on each iteration
 let safe () =

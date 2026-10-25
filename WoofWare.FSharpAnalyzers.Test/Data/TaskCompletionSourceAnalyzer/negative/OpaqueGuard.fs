@@ -7,7 +7,7 @@ open System.Threading.Tasks
 // reachable. Enumerating both outcomes would turn this uncertainty into a spurious warning.
 let createTcsOpaqueGuard (x : obj) =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if Object.ReferenceEquals (x, x) then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else

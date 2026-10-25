@@ -150,7 +150,7 @@ module MissingCancellationTokenAnalyzer =
         | None -> false
 
     let analyze (typedTree : FSharpImplementationFileContents) =
-        let violations = ResizeArray<range * string> ()
+        let violations = ResizeArray<range * string>()
 
         let walker =
             { new TypedTreeCollectorBase() with

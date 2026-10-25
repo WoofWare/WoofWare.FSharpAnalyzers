@@ -20,7 +20,7 @@ module ReferenceEqualsAnalyzer =
             | ParsedInput.ImplFile parsedImplFileInput -> parsedImplFileInput.Trivia.CodeComments
             | _ -> []
 
-        let violations = ResizeArray<range> ()
+        let violations = ResizeArray<range>()
 
         let walker =
             { new TypedTreeCollectorBase() with

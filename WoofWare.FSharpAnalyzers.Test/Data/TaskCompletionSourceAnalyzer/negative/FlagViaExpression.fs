@@ -4,14 +4,14 @@ open System.Threading.Tasks
 
 let createTcsFlagOrOpaqueVariable (extra : TaskCreationOptions) =
     let tcs =
-        TaskCompletionSource<int> (extra ||| TaskCreationOptions.RunContinuationsAsynchronously)
+        TaskCompletionSource<int>(extra ||| TaskCreationOptions.RunContinuationsAsynchronously)
 
     tcs.SetResult 42
     tcs.Task
 
 let createTcsFlagInBothBranches (cond : bool) =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if cond then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else

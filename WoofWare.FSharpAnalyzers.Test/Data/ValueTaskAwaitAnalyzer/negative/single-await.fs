@@ -2,7 +2,7 @@ module SingleAwait
 
 open System.Threading.Tasks
 
-let getValueTask () : ValueTask<int> = ValueTask<int> (42)
+let getValueTask () : ValueTask<int> = ValueTask<int>(42)
 
 let ok () =
     task {

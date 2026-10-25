@@ -125,7 +125,7 @@ module Tests =
         |> Array.map TestCaseData
 
     let makeClient (analyzerName : string) =
-        let client = Client<CliAnalyzerAttribute, _> ()
+        let client = Client<CliAnalyzerAttribute, _>()
 
         let stats =
             client.LoadAnalyzers (
@@ -147,9 +147,7 @@ module Tests =
                 let edi = ExceptionDispatchInfo.Capture e
                 edi.Throw ()
                 failwith "unreachable"
-            | Ok message ->
-                message
-                |> List.map _.Message
+            | Ok message -> message |> List.map _.Message
         )
 
     [<TestCaseSource(nameof tests)>]

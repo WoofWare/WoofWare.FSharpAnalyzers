@@ -14,6 +14,6 @@ type MyTaskCompletionSource<'T> () =
     member _.Task = Task.FromResult Unchecked.defaultof<'T>
 
 let createCustomTcs () =
-    let tcs = MyTaskCompletionSource<int> ()
+    let tcs = MyTaskCompletionSource<int>()
     tcs.SetResult 42
     tcs.Task

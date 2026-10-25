@@ -7,7 +7,7 @@ open System.Threading.Tasks
 // and warn; a free-dependent opaque guard must yield no definite conclusion.
 let createTcs (b : bool) =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if id b then
                 (if b then
                      TaskCreationOptions.RunContinuationsAsynchronously

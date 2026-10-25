@@ -4,7 +4,7 @@ open System.Threading.Tasks
 
 let createTcsWithCommentMention () =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             TaskCreationOptions.DenyChildAttach // TODO: switch to RunContinuationsAsynchronously
             ||| TaskCreationOptions.PreferFairness
         )
@@ -14,7 +14,7 @@ let createTcsWithCommentMention () =
 
 let createTcsWithDeadBranch () =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if false then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else
@@ -26,7 +26,7 @@ let createTcsWithDeadBranch () =
 
 let createTcsWithBitwiseAnd () =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             TaskCreationOptions.RunContinuationsAsynchronously
             &&& TaskCreationOptions.DenyChildAttach
         )

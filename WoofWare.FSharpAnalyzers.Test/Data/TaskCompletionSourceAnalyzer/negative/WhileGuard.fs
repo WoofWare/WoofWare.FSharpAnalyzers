@@ -6,7 +6,7 @@ open System.Threading.Tasks
 let createTcs (b : bool) =
     while b do
         let tcs =
-            TaskCompletionSource<int> (
+            TaskCompletionSource<int>(
                 if b then
                     TaskCreationOptions.RunContinuationsAsynchronously
                 else

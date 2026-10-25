@@ -154,7 +154,7 @@ module ValueTaskAwaitAnalyzer =
                                 }
 
                             if not (awaitInfo.ContainsKey v) then
-                                awaitInfo.[v] <- ResizeArray<AwaitInfo> ()
+                                awaitInfo.[v] <- ResizeArray<AwaitInfo>()
 
                             // Add once with IsInLoop flag to indicate it's in a loop
                             awaitInfo.[v].Add info
@@ -166,7 +166,7 @@ module ValueTaskAwaitAnalyzer =
             // If entering a loop, collect bindings within the loop body
             let newLoopBodyBindings =
                 if isLoop then
-                    let loopBindings = Dictionary<FSharpMemberOrFunctionOrValue, unit> ()
+                    let loopBindings = Dictionary<FSharpMemberOrFunctionOrValue, unit>()
                     args |> List.iter (findValueTaskBindings loopBindings)
                     Some loopBindings
                 else
@@ -214,7 +214,7 @@ module ValueTaskAwaitAnalyzer =
                                 }
 
                             if not (awaitInfo.ContainsKey v) then
-                                awaitInfo.[v] <- ResizeArray<AwaitInfo> ()
+                                awaitInfo.[v] <- ResizeArray<AwaitInfo>()
 
                             awaitInfo.[v].Add info
                         | None -> ()
@@ -222,15 +222,15 @@ module ValueTaskAwaitAnalyzer =
             // Check if this is a For/While loop - search for Binds inside
             elif isLoopCall mfv then
                 // Collect ValueTask bindings within the loop body
-                let loopBindings = Dictionary<FSharpMemberOrFunctionOrValue, unit> ()
+                let loopBindings = Dictionary<FSharpMemberOrFunctionOrValue, unit>()
                 args |> List.iter (findValueTaskBindings loopBindings)
 
                 args
                 |> List.iter (findBindsInExpr awaitInfo processedInLoop true (Some loopBindings))
 
     let analyze (typedTree : FSharpImplementationFileContents) =
-        let awaitInfo = Dictionary<FSharpMemberOrFunctionOrValue, ResizeArray<AwaitInfo>> ()
-        let processedInLoop = HashSet<range> ()
+        let awaitInfo = Dictionary<FSharpMemberOrFunctionOrValue, ResizeArray<AwaitInfo>>()
+        let processedInLoop = HashSet<range>()
 
         // Find all awaits of ValueTasks
         let walker = Walker (awaitInfo, processedInLoop)

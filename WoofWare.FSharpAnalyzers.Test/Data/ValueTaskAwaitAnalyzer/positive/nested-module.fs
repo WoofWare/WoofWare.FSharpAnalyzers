@@ -5,7 +5,7 @@ open System.Threading.Tasks
 module Outer =
     module Inner =
         module DeepNested =
-            let getValueTask () : ValueTask<int> = ValueTask<int> (42)
+            let getValueTask () : ValueTask<int> = ValueTask<int>(42)
 
             let problematic () =
                 task {

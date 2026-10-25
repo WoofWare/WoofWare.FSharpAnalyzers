@@ -4,7 +4,7 @@ open System.Threading.Tasks
 
 let createTcsTautologicalCondition (b : bool) =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if b || not b then
                 TaskCreationOptions.RunContinuationsAsynchronously
             else
@@ -16,7 +16,7 @@ let createTcsTautologicalCondition (b : bool) =
 
 let createTcsCorrelatedNesting (b : bool) =
     let tcs =
-        TaskCompletionSource<int> (
+        TaskCompletionSource<int>(
             if b then TaskCreationOptions.RunContinuationsAsynchronously
             else if b then TaskCreationOptions.None
             else TaskCreationOptions.RunContinuationsAsynchronously

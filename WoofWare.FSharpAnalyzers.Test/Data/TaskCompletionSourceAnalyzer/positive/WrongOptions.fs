@@ -14,7 +14,7 @@ let createTcsWithDenyChildAttach () =
 
 let createTcsWithMultipleWrongOptions () =
     let tcs =
-        TaskCompletionSource<int> (TaskCreationOptions.DenyChildAttach ||| TaskCreationOptions.PreferFairness)
+        TaskCompletionSource<int>(TaskCreationOptions.DenyChildAttach ||| TaskCreationOptions.PreferFairness)
 
     tcs.SetResult 1
     tcs.Task

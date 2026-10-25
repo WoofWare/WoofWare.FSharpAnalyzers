@@ -34,5 +34,5 @@ let testTaskRun () =
     t
 
 let testValueTask () =
-    let vt = ValueTask<int> (42)
+    let vt = ValueTask<int>(42)
     vt
